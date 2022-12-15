@@ -1,6 +1,7 @@
 import trebuchet from '@assets/treb.svg';
 
 const Landing = () => {
+
     return (
         <div>
             <div className='flex flex-col items-center'>
