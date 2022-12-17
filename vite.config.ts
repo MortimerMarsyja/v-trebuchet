@@ -1,4 +1,6 @@
 import { mergeConfig } from "vite";
+import svgr from "vite-plugin-svgr";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default {
   stories: [
@@ -7,6 +9,7 @@ export default {
   ],
   addons: ["@storybook/addon-essentials", "storybook-addon-designs"],
   framework: "@storybook/react-vite",
+  plugins: [svgr(), tsconfigPaths()],
   async viteFinal(config) {
     // Merge custom configuration into the default config
     return mergeConfig(config, {

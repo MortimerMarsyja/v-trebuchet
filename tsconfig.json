@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -21,32 +17,16 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@components/*": [
-        "00-components/*"
-      ],
-      "@containers/*": [
-        "01-containers/*"
-      ],
-      "@pages/*": [
-        "02-pages/*"
-      ],
-      "@hooks/*": [
-        "03-pages/*"
-      ],
-      "@contexts/*": [
-        "04-contexts/*"
-      ],
-      "@utils/*": [
-        "05-utils/*"
-      ],
-      "@assets/*": [
-        "06-assets/*"
-      ],
-    },
+      "@components/*": ["00-components/*"],
+      "@containers/*": ["01-containers/*"],
+      "@pages/*": ["02-pages/*"],
+      "@hooks/*": ["03-pages/*"],
+      "@contexts/*": ["04-contexts/*"],
+      "@utils/*": ["05-utils/*"],
+      "@assets/*": ["06-assets/*"]
+    }
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "references": [
     {
       "path": "./tsconfig.node.json"
