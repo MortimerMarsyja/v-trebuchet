@@ -7,7 +7,9 @@ export default {
   title: "Checkbox",
   component: Checkbox,
   argTypes: {
+    label: { control: "text" },
     onChange: { action: "onChange" },
+    checked: { control: "boolean" },
   },
 } as Meta<typeof Checkbox>;
 
