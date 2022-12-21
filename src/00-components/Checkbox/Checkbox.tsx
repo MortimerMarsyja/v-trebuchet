@@ -10,7 +10,6 @@ const CheckboxComponent = ({ checked, onChange, label }: Props) => {
   const [isChecked, setIsChecked] = useState(checked) || false;
 
   const handleClick = (checked: boolean) => {
-    console.log("handleClick", checked);
     setIsChecked(checked);
   };
 
