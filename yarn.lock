@@ -3659,6 +3659,13 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
+cypress-vite@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/cypress-vite/-/cypress-vite-1.2.1.tgz#f1a276bc22e43f47270dc5bd10c6ad4cc3981baf"
+  integrity sha512-/72GXXTcKvIv4NPK64qngcuim5U8WtflyBz9N4dzCqxR6MiIcGAK1EukrOCDpyChYbmjUy6LqbWhAgvXcs8lFw==
+  dependencies:
+    debug "^4.3.4"
+
 cypress@^12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-12.1.0.tgz#1fdaa631bc30df466dc9505154616f4cf69dbd4b"

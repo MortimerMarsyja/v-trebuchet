@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    height: 100%;
-}
-
 #root {
-    height: 100vh;
+  @apply h-full min-w-[1280px];
+}
+html,
+body {
+  @apply h-full antialiased text-white;
+}
+*,
+*::before,
+*::after {
+  @apply underline-offset-4;
 }

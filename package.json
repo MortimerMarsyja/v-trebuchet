@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "cypress": "^12.1.0",
+    "cypress-vite": "^1.2.1",
     "postcss": "^8.4.20",
     "react-router-dom": "^6.4.5",
     "storybook": "^7.0.0-beta.12",
