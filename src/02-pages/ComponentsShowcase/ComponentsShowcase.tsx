@@ -3,7 +3,7 @@ import Counter from "@components/Counter";
 
 const ComponentsShowcase = (): JSX.Element => {
   return (
-    <div>
+    <div className="mx-3 my-3">
       <CheckboxComponent label="Label" onChange={() => {}} />
       <Counter initialCount={0} />
     </div>

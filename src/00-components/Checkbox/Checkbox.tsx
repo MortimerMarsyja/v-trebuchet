@@ -19,7 +19,7 @@ const CheckboxComponent = ({ checked, onChange, label }: Props) => {
       onClick={() => handleClick(!isChecked)}
     >
       <input type="checkbox" checked={isChecked} />
-      <label className="ml-2 hover:cursor-pointer">{label}</label>
+      <label className="ml-2 hover:cursor-pointer text-dark">{label}</label>
     </div>
   );
 };
