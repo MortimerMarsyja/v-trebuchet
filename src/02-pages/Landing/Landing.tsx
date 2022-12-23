@@ -1,6 +1,15 @@
 import Logo from "@components/Logo";
+import useFetch from "04-hooks/use-fetcher";
+import useSWR from "swr";
 
 const Landing = () => {
+  const { fetcher } = useFetch();
+  const { data } = useSWR(
+    `https://restcountries.com/v3.1/all
+    `,
+    fetcher
+  );
+
   return (
     <div>
       <div className="flex flex-col items-center m-10">
@@ -10,6 +19,7 @@ const Landing = () => {
         <div className="flex text-dark justify-center">
           Trebuchet v<sub>0.0.1</sub>
         </div>
+        <div>{data?.length}</div>
       </div>
     </div>
   );
