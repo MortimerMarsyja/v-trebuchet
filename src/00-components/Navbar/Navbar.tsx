@@ -3,8 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { useThemeContext } from "@contexts/theme-context";
 import Sun from "@assets/icons/Sun";
 import Moon from "@assets/icons/Moon";
-const Navbar = (): JSX.Element => {
-  const { toggleTheme, theme } = useThemeContext();
+
+interface Props {
+  toggleTheme: () => void;
+  theme: string;
+}
+
+const Navbar = ({ toggleTheme, theme }: Props): JSX.Element => {
   const location = useLocation();
   return (
     <div className="w-full h-12 bg-darker flex items-center justify-between">

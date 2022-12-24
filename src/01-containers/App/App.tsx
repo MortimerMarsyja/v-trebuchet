@@ -2,14 +2,18 @@ import { routes } from "@utils/routes";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Navbar from "@components/Navbar";
 import NotFound from "@pages/NotFound";
-import { ThemeContextProvider } from "@contexts/theme-context";
+import { useState } from "react";
 
 const App = (): JSX.Element => {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
-    <div className="bg-light h-full">
-      <ThemeContextProvider>
+    <div className={`h-full ${theme === "dark" ? "dark" : ""}`}>
+      <div className="h-full bg-light dark:bg-dark">
         <BrowserRouter>
-          <Navbar />
+          <Navbar toggleTheme={toggleTheme} theme={theme} />
           <Routes>
             {routes.map((route) => (
               <Route
@@ -21,7 +25,7 @@ const App = (): JSX.Element => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </ThemeContextProvider>
+      </div>
     </div>
   );
 };

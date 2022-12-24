@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 #root {
-  @apply h-full;
+  @apply h-full w-full;
 }
 html,
 body {
-  @apply h-full antialiased text-white;
+  @apply h-full antialiased w-full;
 }
 *,
 *::before,
