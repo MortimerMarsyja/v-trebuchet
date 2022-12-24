@@ -1,6 +1,8 @@
 import { routes } from "@utils/routes";
 import { Link, useParams } from "react-router-dom";
 import { useThemeContext } from "@contexts/theme-context";
+import Sun from "@assets/icons/Sun";
+import Moon from "@assets/icons/Moon";
 const Navbar = (): JSX.Element => {
   const { toggleTheme, theme } = useThemeContext();
   const queryParams = useParams();
@@ -16,8 +18,11 @@ const Navbar = (): JSX.Element => {
           </Link>
         ))}
       </div>
-      <button className="mr-9" onClick={toggleTheme}>
-        Theme {theme}
+      <button
+        className="mr-5 bg-[#505050] w-[36px] h-[36px] flex justify-center items-center rounded-2xl"
+        onClick={toggleTheme}
+      >
+        {theme === "light" ? <Sun /> : <Moon />}
       </button>
     </div>
   );
