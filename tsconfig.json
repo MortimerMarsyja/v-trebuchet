@@ -20,8 +20,8 @@
       "@components/*": ["00-components/*"],
       "@containers/*": ["01-containers/*"],
       "@pages/*": ["02-pages/*"],
-      "@hooks/*": ["03-pages/*"],
-      "@contexts/*": ["04-contexts/*"],
+      "@hooks/*": ["04-hooks/*"],
+      "@contexts/*": ["03-contexts/*"],
       "@utils/*": ["05-utils/*"],
       "@assets/*": ["06-assets/*"]
     }
