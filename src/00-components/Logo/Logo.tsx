@@ -14,7 +14,6 @@ const Logo = (props: Props): JSX.Element => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <title>{"Group"}</title>
       <defs>
         <pattern
           id="at"
