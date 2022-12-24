@@ -5,7 +5,7 @@ const Navbar = (): JSX.Element => {
   const { toggleTheme, theme } = useThemeContext();
   const queryParams = useParams();
   return (
-    <div className="w-full h-12 bg-darker flex items-center justify-around">
+    <div className="w-full h-12 bg-darker flex items-center justify-between">
       <div>
         {routes.map((route) => (
           <Link
@@ -16,7 +16,9 @@ const Navbar = (): JSX.Element => {
           </Link>
         ))}
       </div>
-      <button onClick={toggleTheme}>Theme {theme}</button>
+      <button className="mr-9" onClick={toggleTheme}>
+        Theme {theme}
+      </button>
     </div>
   );
 };
