@@ -16,10 +16,12 @@ const Landing = () => {
         <Logo backgroundColor="#2b2b2b" size={500} />
       </div>
       <div className="text-2xl w-full flex flex-col text-light m-3">
-        <div className="flex text-dark justify-center">
+        <div className="flex text-dark dark:text-light justify-center">
           Trebuchet v<sub>0.0.1</sub>
         </div>
-        <div>{data?.length}</div>
+        <div className="flex text-dark dark:text-light justify-center">
+          {data?.length}
+        </div>
       </div>
     </div>
   );
