@@ -22,7 +22,11 @@ const Navbar = (): JSX.Element => {
         className="mr-5 bg-[#505050] w-[36px] h-[36px] flex justify-center items-center rounded-2xl"
         onClick={toggleTheme}
       >
-        {theme === "light" ? <Sun /> : <Moon />}
+        {theme === "light" ? (
+          <Sun strokeColor="#fff" />
+        ) : (
+          <Moon strokeColor="#fff" />
+        )}
       </button>
     </div>
   );
