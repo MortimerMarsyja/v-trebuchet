@@ -1,17 +1,19 @@
 import { routes } from "@utils/routes";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useThemeContext } from "@contexts/theme-context";
 import Sun from "@assets/icons/Sun";
 import Moon from "@assets/icons/Moon";
 const Navbar = (): JSX.Element => {
   const { toggleTheme, theme } = useThemeContext();
-  const queryParams = useParams();
+  const location = useLocation();
   return (
     <div className="w-full h-12 bg-darker flex items-center justify-between">
       <div>
         {routes.map((route) => (
           <Link
-            className="hover:text-mid-light text-light ml-9"
+            className={`hover:text-mid-light text-light ml-9 ${
+              route.path === location.pathname ? "underline" : ""
+            }`}
             to={route.path}
           >
             {route.name}
