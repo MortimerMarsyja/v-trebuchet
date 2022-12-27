@@ -12,7 +12,6 @@ type ModalContextType = {
   content: React.ReactNode | null;
   showToast: (content: React.ReactNode, type: ToastType) => void;
   hideToast: () => void;
-  type: ToastType;
 };
 
 export const ToastContentContext = createContext<ModalContextType>({
@@ -20,13 +19,12 @@ export const ToastContentContext = createContext<ModalContextType>({
   showToast: () => {},
   hideToast: () => {},
   content: null,
-  type: null,
 });
 
 export const ToastContentProvider = ({ children }: ProviderProps) => {
   const [content, setContent] = useState<ModalContextType["content"]>(null);
   const [visible, setVisible] = useState(false);
-  const [type, setType] = useState<ModalContextType["type"]>(null);
+  const [type, setType] = useState<ToastType>(null);
 
   const showToast = (content: React.ReactNode, type: ToastType) => {
     setContent(content);
