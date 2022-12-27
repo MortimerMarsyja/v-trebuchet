@@ -15,6 +15,7 @@ const Navbar = ({ toggleTheme, theme }: Props): JSX.Element => {
       <div>
         {routes.map((route) => (
           <Link
+            key={route.name}
             className={`hover:text-mid-light text-light ml-9 ${
               route.path === location.pathname ? "underline" : ""
             }`}
