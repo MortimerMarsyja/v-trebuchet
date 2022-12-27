@@ -8,8 +8,11 @@ const Counter = ({ initialCount }: { initialCount: number }) => {
     counterInit
   );
   return (
-    <div className="flex bg-dark text-darker items-center flex-wrap flex-col w-[220px] justify-items-start rounded-md dark:text-light dark:bg-darker">
-      <div className="h-[36px] flex items-center">Count: {state.count}</div>
+    <div className="flex bg-dark text-m-light items-center flex-wrap flex-col w-[220px] justify-items-start rounded-md dark:text-light dark:bg-darker">
+      <div className="h-[36px] flex items-center text-m-light">
+        Count: &nbsp;
+        <span className="text-m-blue">{state.count}</span>
+      </div>
       <div className="flex flex-wrap">
         <button
           className="m-3 h-3 flex items-center"
