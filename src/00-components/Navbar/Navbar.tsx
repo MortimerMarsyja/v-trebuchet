@@ -1,6 +1,5 @@
 import { routes } from "@utils/routes";
 import { Link, useLocation } from "react-router-dom";
-import { useThemeContext } from "@contexts/theme-context";
 import Sun from "@assets/icons/Sun";
 import Moon from "@assets/icons/Moon";
 

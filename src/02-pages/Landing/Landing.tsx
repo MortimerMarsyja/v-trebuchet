@@ -4,6 +4,7 @@ import useSWR from "swr";
 
 const Landing = () => {
   const { fetcher } = useFetch();
+
   const { data } = useSWR(
     `https://restcountries.com/v3.1/all
     `,

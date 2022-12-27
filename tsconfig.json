@@ -23,7 +23,8 @@
       "@hooks/*": ["04-hooks/*"],
       "@contexts/*": ["03-contexts/*"],
       "@utils/*": ["05-utils/*"],
-      "@assets/*": ["06-assets/*"]
+      "@assets/*": ["06-assets/*"],
+      "@reducers/*": ["07-reducers/*"]
     }
   },
   "include": ["src"],

@@ -15,11 +15,11 @@ const CheckboxComponent = ({ checked, onChange, label }: Props) => {
 
   return (
     <div
-      className="m-3 flex items-center"
+      className="m-3 flex items-center text-dark dark:text-light"
       onClick={() => handleClick(!isChecked)}
     >
       <input type="checkbox" checked={isChecked} />
-      <label className="ml-2 hover:cursor-pointer text-dark">{label}</label>
+      <label className="ml-2 hover:cursor-pointer ">{label}</label>
     </div>
   );
 };

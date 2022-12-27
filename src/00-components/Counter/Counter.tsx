@@ -25,7 +25,7 @@ function reducer(state: any, action: ActionInterface) {
 const Counter = ({ initialCount }: { initialCount: number }) => {
   const [state, dispatch] = useReducer(reducer, initialCount, counterInit);
   return (
-    <div className="flex bg-dark items-center flex-wrap flex-col w-[220px] justify-items-start rounded-md">
+    <div className="flex bg-dark items-center flex-wrap flex-col w-[220px] justify-items-start rounded-md dark:text-light dark:bg-darker">
       <div className="h-[36px] flex items-center">Count: {state.count}</div>
       <div className="flex flex-wrap">
         <button
