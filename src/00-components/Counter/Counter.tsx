@@ -1,29 +1,12 @@
+import { counterReducer, counterInit } from "@reducers/countReducer";
 import { useReducer } from "react";
 
-function counterInit(initialCount: number) {
-  return { count: initialCount };
-}
-
-interface ActionInterface {
-  type: string;
-  payload?: number;
-}
-
-function reducer(state: any, action: ActionInterface) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
-    case "reset":
-      return counterInit(action.payload!!);
-    default:
-      return state;
-  }
-}
-
 const Counter = ({ initialCount }: { initialCount: number }) => {
-  const [state, dispatch] = useReducer(reducer, initialCount, counterInit);
+  const [state, dispatch] = useReducer(
+    counterReducer,
+    initialCount,
+    counterInit
+  );
   return (
     <div className="flex bg-dark items-center flex-wrap flex-col w-[220px] justify-items-start rounded-md dark:text-light dark:bg-darker">
       <div className="h-[36px] flex items-center">Count: {state.count}</div>
