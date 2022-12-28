@@ -1,21 +1,26 @@
+import reducerFunction from "@utils/reducerFunction";
+
 export function counterInit(initialCount: number) {
   return { count: initialCount };
 }
 
 export interface ActionInterface {
-  type: string;
+  type: "increment" | "decrement" | "reset";
   payload?: number;
 }
 
-export function counterReducer(state: any, action: ActionInterface) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
-    case "reset":
-      return counterInit(action.payload!!);
-    default:
-      return state;
-  }
-}
+const cases = {
+  increment: (state: any, action: ActionInterface) => {
+    return { count: state.count + 1 };
+  },
+  decrement: (state: any, action: ActionInterface) => {
+    return { count: state.count - 1 };
+  },
+  reset: (state: any, action: ActionInterface) => {
+    return counterInit(action.payload!!);
+  },
+};
+
+export const counterReducer = (state: any, action: ActionInterface): any => {
+  return reducerFunction(state, action, cases);
+};
