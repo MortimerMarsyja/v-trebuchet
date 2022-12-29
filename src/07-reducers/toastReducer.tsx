@@ -26,17 +26,16 @@ export interface ActionInterface {
 
 const cases = {
   success_toast: (state: any, action: ActionInterface) => {
-    console.log("success_toast", { action });
-    return action.payload!!;
+    return action.payload;
   },
   notification_toast: (state: any, action: ActionInterface) => {
-    return action.payload!!;
+    return action.payload;
   },
   warning_toast: (state: any, action: ActionInterface) => {
-    return action.payload!!;
+    return action.payload;
   },
   error_toast: (state: any, action: ActionInterface) => {
-    return action.payload!!;
+    return action.payload;
   },
   hide: (state: any, action: ActionInterface) => {
     return toastInit();

@@ -21,6 +21,7 @@ export const ToastContentContext = createContext<ModalContextType>({
 
 export const ToastContentProvider = ({ children }: ProviderProps) => {
   const [state, dispatch] = useReducer(toastReducer, toastInit);
+
   const showToast = (content: React.ReactNode, type: ToastType) => {
     dispatch({
       type: `${type}_toast`,
