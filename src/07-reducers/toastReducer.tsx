@@ -4,7 +4,7 @@ export function toastInit() {
   return {
     show: false,
     type: "none",
-    content: undefined,
+    content: null,
   };
 }
 
@@ -14,34 +14,35 @@ interface ToastPayloadInterface {
   show: boolean;
 }
 
+export type ToastActions =
+  | "success_toast"
+  | "notification_toast"
+  | "warning_toast"
+  | "error_toast"
+  | "hide_toast";
 export interface ActionInterface {
-  type:
-    | "success_toast"
-    | "notification_toast"
-    | "warning_toast"
-    | "error_toast"
-    | "hide_toast";
+  type: ToastActions;
   payload?: ToastPayloadInterface;
 }
 
 const cases = {
-  success_toast: (state: any, action: ActionInterface) => {
+  success_toast: <S,>(state: S, action: ActionInterface) => {
     return action.payload;
   },
-  notification_toast: (state: any, action: ActionInterface) => {
+  notification_toast: <S,>(state: S, action: ActionInterface) => {
     return action.payload;
   },
-  warning_toast: (state: any, action: ActionInterface) => {
+  warning_toast: <S,>(state: S, action: ActionInterface) => {
     return action.payload;
   },
-  error_toast: (state: any, action: ActionInterface) => {
+  error_toast: <S,>(state: S, action: ActionInterface) => {
     return action.payload;
   },
-  hide: (state: any, action: ActionInterface) => {
+  hide_toast: <S,>(state: S, action: ActionInterface) => {
     return toastInit();
   },
 };
 
-export const toastReducer = (state: any, action: ActionInterface): any => {
+export const toastReducer = <S,>(state: S, action: ActionInterface): S => {
   return reducerFunction(state, action, cases);
 };

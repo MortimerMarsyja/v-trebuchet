@@ -4,8 +4,10 @@ export function counterInit(initialCount: number) {
   return { count: initialCount };
 }
 
+export type CounterActions = "increment" | "decrement" | "reset";
+
 export interface ActionInterface {
-  type: "increment" | "decrement" | "reset";
+  type: CounterActions;
   payload?: number;
 }
 
