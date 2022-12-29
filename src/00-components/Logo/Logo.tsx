@@ -1,10 +1,10 @@
 interface Props {
-  backgroundColor?: string;
+  bg?: string;
   size: number;
 }
 
 const Logo = (props: Props): JSX.Element => {
-  const { backgroundColor, size } = props;
+  const { bg, size } = props;
   return (
     <svg
       viewBox="0 0 1159 1164"
@@ -1013,7 +1013,7 @@ const Logo = (props: Props): JSX.Element => {
       <g fill="none" fillRule="evenodd">
         <path
           d="M134.743 1163.15C60.723 1163.15.5 1102.928.5 1028.907V134.742C.5 60.72 60.722.5 134.743.5h889.265c74.021 0 134.243 60.22 134.243 134.242v894.165c0 74.021-60.222 134.243-134.243 134.243H134.743Z"
-          fill={backgroundColor || "#1fa"}
+          fill={bg || "#1fa"}
         />
         <path
           fill="url(#at)"

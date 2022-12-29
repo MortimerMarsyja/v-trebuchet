@@ -6,7 +6,6 @@ export default function useFetch() {
   const fetcher = (url: string) => {
     return fetch(url)
       .then((res) => {
-        console.log(res);
         res.status !== 200 && showToast(res.statusText, "error");
         res.status === 200 && showToast("Success", "success");
         return res.json();

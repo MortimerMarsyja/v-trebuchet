@@ -16,6 +16,16 @@ const Toast = ({
   toastTimeOut,
   toastType,
 }: Props) => {
+  console.log(
+    {
+      show,
+      hideToast,
+      children,
+      toastTimeOut,
+      toastType,
+    },
+    "toast component data"
+  );
   const [node] = useState(document.createElement("div"));
 
   const removeNode = () => {

@@ -1,53 +1,45 @@
 import Toast from "@components/Toast";
-import { createContext, useContext, useState } from "react";
+import { toastReducer, toastInit } from "@reducers/toastReducer";
+import { createContext, useContext } from "react";
+import { useReducer } from "react";
 
 interface ProviderProps {
   children: React.ReactNode;
 }
 
-type ToastType = "success" | "error" | "warning" | "info" | null;
+type ToastType = "success" | "error" | "warning" | "notification";
 
 type ModalContextType = {
-  visible: boolean;
-  content: React.ReactNode | null;
   showToast: (content: React.ReactNode, type: ToastType) => void;
   hideToast: () => void;
 };
 
 export const ToastContentContext = createContext<ModalContextType>({
-  visible: false,
   showToast: () => {},
   hideToast: () => {},
-  content: null,
 });
 
 export const ToastContentProvider = ({ children }: ProviderProps) => {
-  const [content, setContent] = useState<ModalContextType["content"]>(null);
-  const [visible, setVisible] = useState(false);
-  const [type, setType] = useState<ToastType>(null);
-
+  const [state, dispatch] = useReducer(toastReducer, toastInit);
   const showToast = (content: React.ReactNode, type: ToastType) => {
-    setContent(content);
-    setType(type);
-    setVisible(true);
+    dispatch({
+      type: `${type}_toast`,
+      payload: { content, type, show: true },
+    });
   };
 
   const hideToast = () => {
-    setContent(null);
-    setVisible(false);
-    setType(null);
+    dispatch({ type: "hide_toast" });
   };
 
   return (
-    <ToastContentContext.Provider
-      value={{ content, visible, hideToast, showToast }}
-    >
+    <ToastContentContext.Provider value={{ hideToast, showToast }}>
       {children}
       <Toast
-        show={visible}
-        toastType={type}
+        show={state.show}
+        toastType={state.type}
         hideToast={hideToast}
-        children={content}
+        children={state.content}
       />
     </ToastContentContext.Provider>
   );
